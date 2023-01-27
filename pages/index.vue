@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <Layout />
+</template>
 
 <script>
 export default {

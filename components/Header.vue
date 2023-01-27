@@ -1,9 +1,11 @@
 <template>
-  <Header />
+  <header>
+    <h1>Shop</h1>
+  </header>
 </template>
 
 <script>
 export default {
-  name: "Layout",
+  name: "Header",
 };
 </script>

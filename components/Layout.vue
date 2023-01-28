@@ -1,5 +1,11 @@
 <template>
-  <Header />
+  <div>
+    <Header />
+    <main class="main">
+      <slot></slot>
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script>

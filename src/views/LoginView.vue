@@ -46,10 +46,12 @@ export default {
   },
   methods: {
     async submitForm() {
+      const { usernameValue, passwordValue } = this;
+      if (!usernameValue || !passwordValue) return;
       try {
         const data = await loginUser({
-          username: this.usernameValue,
-          password: this.passwordValue,
+          username: usernameValue,
+          password: passwordValue,
         });
         this.$router.push("/");
       } catch (err) {

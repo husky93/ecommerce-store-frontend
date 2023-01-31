@@ -13,3 +13,8 @@ export const loginUser = async (user) => {
   const response = await authApi.post("auth/login", user);
   return response.data;
 };
+
+export const signupUser = async (data) => {
+  const response = await authApi.post("user", data);
+  return response.data;
+};

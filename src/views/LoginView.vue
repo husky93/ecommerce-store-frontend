@@ -1,7 +1,8 @@
 <template>
   <PageLayout>
     <div class="login">
-      <h1>This is a login page</h1>
+      <h2>Login</h2>
+      <form method="get" @submit.prevent="submitForm"></form>
     </div>
   </PageLayout>
 </template>
@@ -10,5 +11,8 @@
 import PageLayout from "../components/PageLayout.vue";
 export default {
   components: { PageLayout },
+  methods: {
+    submitForm() {},
+  },
 };
 </script>

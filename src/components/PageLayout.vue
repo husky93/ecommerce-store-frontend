@@ -16,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.main {
+  flex: 1;
+}
+</style>

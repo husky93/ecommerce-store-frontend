@@ -28,6 +28,7 @@
         <input type="submit" value="Submit" />
       </form>
     </div>
+    <div v-if="error">{{ error.response.data.message }}</div>
   </PageLayout>
 </template>
 
@@ -40,14 +41,19 @@ export default {
     return {
       usernameValue: "",
       passwordValue: "",
+      error: null,
     };
   },
   methods: {
     async submitForm() {
-      const data = await loginUser({
-        username: this.usernameValue,
-        password: this.passwordValue,
-      });
+      try {
+        const data = await loginUser({
+          username: this.usernameValue,
+          password: this.passwordValue,
+        });
+      } catch (err) {
+        this.error = err;
+      }
     },
   },
   components: { PageLayout },

@@ -23,6 +23,7 @@
             v-model="passwordValue"
           />
         </div>
+        <input type="submit" value="Submit" />
       </form>
     </div>
   </PageLayout>

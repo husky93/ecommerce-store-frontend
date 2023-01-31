@@ -53,6 +53,7 @@ export default {
           username: usernameValue,
           password: passwordValue,
         });
+        this.$store.dispatch("login", data);
         this.$router.push("/");
       } catch (err) {
         this.error = err;

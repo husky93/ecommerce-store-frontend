@@ -33,6 +33,8 @@
 
 <script>
 import PageLayout from "../components/PageLayout.vue";
+import { loginUser } from "../app/api";
+
 export default {
   data() {
     return {
@@ -41,7 +43,12 @@ export default {
     };
   },
   methods: {
-    submitForm() {},
+    async submitForm() {
+      const data = await loginUser({
+        username: this.usernameValue,
+        password: this.passwordValue,
+      });
+    },
   },
   components: { PageLayout },
 };

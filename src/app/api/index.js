@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://express-shop-api-production.up.railway.app/";
+const BASE_URL = "http://localhost:3000/";
 
 const authApi = axios.create({
   baseURL: BASE_URL,

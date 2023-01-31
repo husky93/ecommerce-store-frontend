@@ -28,7 +28,9 @@
         <input type="submit" value="Submit" />
       </form>
     </div>
-    <div v-if="error">{{ error.response.data.message }}</div>
+    <div v-if="error">
+      {{ "response" in error ? error.response.data.message : error.message }}
+    </div>
   </PageLayout>
 </template>
 

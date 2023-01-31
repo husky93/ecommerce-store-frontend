@@ -10,6 +10,7 @@
             name="username"
             id="username"
             placeholder="example@email.com"
+            required
             v-model="usernameValue"
           />
         </div>
@@ -20,6 +21,7 @@
             name="password"
             id="password"
             placeholder="**********"
+            required
             v-model="passwordValue"
           />
         </div>

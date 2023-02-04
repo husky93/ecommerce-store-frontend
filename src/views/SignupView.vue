@@ -4,66 +4,68 @@
       <h2>Signup</h2>
       <form @submit.prevent="submitForm" method="post">
         <div class="input-group">
-          <label for="username">E-mail:</label>
-          <input
+          <InputGroup
+            label="E-mail:"
             type="email"
             name="username"
-            id="username"
             v-model="username"
           />
           <ErrorDisplay :error-array="usernameErrors" />
         </div>
         <div class="input-group">
-          <label for="password">Password:</label>
-          <input
+          <InputGroup
+            label="Password:"
             type="password"
             name="password"
-            id="password"
             v-model="password"
           />
           <ErrorDisplay :error-array="passwordErrors" />
         </div>
         <div class="input-group">
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" v-model="name" />
+          <InputGroup label="Name:" type="text" name="name" v-model="name" />
           <ErrorDisplay :error-array="nameErrors" />
         </div>
         <div class="input-group">
-          <label for="surname">Surname:</label>
-          <input type="text" name="surname" id="surname" v-model="surname" />
+          <InputGroup
+            label="Surname:"
+            type="text"
+            name="surname"
+            v-model="surname"
+          />
           <ErrorDisplay :error-array="surnameErrors" />
         </div>
         <div class="input-group">
-          <label for="city">City:</label>
-          <input type="text" name="city" id="city" v-model="address.city" />
+          <InputGroup
+            label="City:"
+            type="text"
+            name="city"
+            v-model="address.city"
+          />
           <ErrorDisplay :error-array="CityErrors" />
         </div>
         <div class="input-group">
-          <label for="zip_code">Zip-Code:</label>
-          <input
+          <InputGroup
+            label="Zip-Code:"
             type="number"
             name="zip_code"
-            id="zip_code"
             v-model="address.zip_code"
           />
           <ErrorDisplay :error-array="zipErrors" />
         </div>
         <div class="input-group">
-          <label for="street">Street:</label>
-          <input
+          <InputGroup
+            label="Street:"
             type="text"
             name="street"
-            id="street"
             v-model="address.street"
           />
           <ErrorDisplay :error-array="streetErrors" />
         </div>
         <div class="input-group">
-          <label for="house_num">House number:</label>
-          <input
+          <InputGroup
+            label="House number:"
             type="text"
             name="house_num"
-            id="house_num"
             v-model="address.house_num"
           />
           <ErrorDisplay :error-array="houseNumErrors" />
@@ -80,10 +82,11 @@
 <script>
 import PageLayout from "../components/PageLayout.vue";
 import ErrorDisplay from "../components/ErrorDisplay.vue";
+import InputGroup from "../components/InputGroup.vue";
 import { signupUser } from "../app/api";
 
 export default {
-  components: { PageLayout, ErrorDisplay },
+  components: { PageLayout, ErrorDisplay, InputGroup },
   data() {
     return {
       username: "",

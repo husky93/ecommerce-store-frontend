@@ -46,7 +46,7 @@
         <div class="input-group">
           <InputGroup
             label="Zip-Code:"
-            type="number"
+            type="text"
             name="zip_code"
             v-model="address.zip_code"
           />
@@ -107,9 +107,9 @@ export default {
       const { username, password, name, surname, address } = this;
       try {
         await signupUser({ username, password, name, surname, address });
+        this.$router.push("/login");
       } catch (err) {
         this.error = err.response.data.errors;
-        console.log(err);
       }
     },
     filterErrors(error, param) {

@@ -4,25 +4,23 @@
       <h2>Login</h2>
       <form method="get" @submit.prevent="submitForm">
         <div class="input-group">
-          <label for="username">E-mail:</label>
-          <input
+          <InputGroup
+            label="E-mail:"
             type="email"
             name="username"
-            id="username"
+            v-model="usernameValue"
             placeholder="example@email.com"
             required
-            v-model="usernameValue"
           />
         </div>
         <div class="input-group">
-          <label for="password">Password:</label>
-          <input
+          <InputGroup
+            label="Password:"
             type="password"
             name="password"
-            id="password"
+            v-model="passwordValue"
             placeholder="**********"
             required
-            v-model="passwordValue"
           />
         </div>
         <input type="submit" value="Submit" />
@@ -36,6 +34,7 @@
 
 <script>
 import PageLayout from "../components/PageLayout.vue";
+import InputGroup from "../components/InputGroup.vue";
 import { loginUser } from "../app/api";
 
 export default {
@@ -62,6 +61,6 @@ export default {
       }
     },
   },
-  components: { PageLayout },
+  components: { PageLayout, InputGroup },
 };
 </script>

@@ -1,0 +1,17 @@
+<template>
+  <label :for="name">{{ label }}</label>
+  <input
+    :type="type"
+    :name="name"
+    :id="name"
+    :value="modelValue"
+    @input="$emit('update:ModelValue', $event.target.value)"
+  />
+</template>
+
+<script>
+export default {
+  props: ["label", "type", "name", "modelValue"],
+  emits: ["update:modelValue"],
+};
+</script>

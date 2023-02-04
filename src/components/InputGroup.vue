@@ -5,6 +5,7 @@
     :name="name"
     :id="name"
     :value="modelValue"
+    v-bind="$attrs"
     @input="$emit('update:ModelValue', $event.target.value)"
   />
 </template>
@@ -13,5 +14,6 @@
 export default {
   props: ["label", "type", "name", "modelValue"],
   emits: ["update:modelValue"],
+  inheritAttrs: false,
 };
 </script>

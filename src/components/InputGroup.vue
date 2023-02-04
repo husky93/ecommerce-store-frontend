@@ -6,7 +6,7 @@
     :id="name"
     :value="modelValue"
     v-bind="$attrs"
-    @input="$emit('update:ModelValue', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
   />
 </template>
 

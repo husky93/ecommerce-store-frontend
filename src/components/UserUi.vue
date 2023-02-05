@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="user_ui not_authenticated" v-if="!isAuthenticated">
     <CustomButton
       class="primary"
       text="Sign up"
@@ -24,6 +24,11 @@ export default {
   methods: {
     redirectTo(link) {
       this.$router.push(link);
+    },
+  },
+  computed: {
+    isAuthenticated() {
+      return !!this.$store.state.user;
     },
   },
 };

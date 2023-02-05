@@ -29,6 +29,11 @@
     <div v-if="error">
       {{ "response" in error ? error.response.data.message : error.message }}
     </div>
+    <div>
+      <router-link to="/signup"
+        >Not Signed Up yet? Click here to create new account.</router-link
+      >
+    </div>
   </PageLayout>
 </template>
 

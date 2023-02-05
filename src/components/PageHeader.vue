@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>Shop</h1>
+    <router-link to="/"><h1>Shop</h1></router-link>
     <UserUi />
   </header>
 </template>

@@ -3,5 +3,10 @@
 </template>
 
 <script>
-export default {};
+import CollapsableList from "./CollapsableList.vue";
+export default {
+  components: {
+    CollapsableList,
+  },
+};
 </script>

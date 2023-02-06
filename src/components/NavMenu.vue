@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { getCategories } from "../app/api";
 import CollapsableList from "./CollapsableList.vue";
 
 export default {

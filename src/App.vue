@@ -12,4 +12,11 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss"></style>
+<style>
+:root {
+  --bg-color: #d9d9d9;
+}
+body {
+  background-color: var(--bg-color);
+}
+</style>

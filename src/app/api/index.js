@@ -18,3 +18,8 @@ export const signupUser = async (data) => {
   const response = await authApi.post("user", data);
   return response.data;
 };
+
+export const getCategories = async () => {
+  const response = await authApi.get("categories");
+  return response.data;
+};

@@ -1,7 +1,9 @@
 <template>
   <nav>
     <ul>
-      <CollapsableList name="Categories" :list="categories" />
+      <KeepAlive>
+        <CollapsableList name="Categories" :list="categories" />
+      </KeepAlive>
     </ul>
   </nav>
 </template>
@@ -11,16 +13,13 @@ import { getCategories } from "../app/api";
 import CollapsableList from "./CollapsableList.vue";
 
 export default {
-  data() {
-    return {
-      categories: null,
-    };
-  },
   components: {
     CollapsableList,
   },
-  async created() {
-    this.categories = await getCategories();
+  computed: {
+    categories() {
+      return this.$store.state.categories;
+    },
   },
 };
 </script>

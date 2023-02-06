@@ -1,5 +1,9 @@
 <template>
-  <nav></nav>
+  <nav>
+    <ul>
+      <CollapsableList name="Categories" />
+    </ul>
+  </nav>
 </template>
 
 <script>

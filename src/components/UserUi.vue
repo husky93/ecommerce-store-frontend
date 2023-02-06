@@ -7,10 +7,14 @@
     />
     <CustomButton class="primary" text="Login" @click="redirectTo(loginLink)" />
   </div>
+  <div class="user_ui authenticated" v-if="isAuthenticated">
+    <UserInfo />
+  </div>
 </template>
 
 <script>
 import CustomButton from "./CustomButton.vue";
+import UserInfo from "./UserInfo.vue";
 export default {
   data() {
     return {
@@ -20,6 +24,7 @@ export default {
   },
   components: {
     CustomButton,
+    UserInfo,
   },
   methods: {
     redirectTo(link) {

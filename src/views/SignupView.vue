@@ -41,7 +41,7 @@
             name="city"
             v-model="address.city"
           />
-          <ErrorDisplay :error-array="CityErrors" />
+          <ErrorDisplay :error-array="cityErrors" />
         </div>
         <div class="input-group">
           <InputGroup

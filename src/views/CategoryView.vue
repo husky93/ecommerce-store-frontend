@@ -47,12 +47,12 @@ export default {
     },
   },
   async created() {
-    this.items = await this.fetchItems();
     this.$watch(
       () => this.$route.params,
       async () => {
         this.items = await this.fetchItems();
-      }
+      },
+      { immediate: true }
     );
   },
 };

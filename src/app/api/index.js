@@ -23,3 +23,8 @@ export const getCategories = async () => {
   const response = await authApi.get("categories");
   return response.data;
 };
+
+export const getCategoryItems = async (category) => {
+  const response = await authApi.get(`items?category=${category}`);
+  return response.data;
+};

@@ -31,8 +31,20 @@ export default {
       return null;
     },
   },
-  async created() {
-    if (this.category) this.items = await getCategoryItems(this.category._id);
+  methods: {
+    async fetchItems() {
+      if (this.category) return await getCategoryItems(this.category._id);
+      return null;
+    },
+  },
+  created() {
+    this.items = this.fetchItems();
+    this.$watch(
+      () => this.$route.params,
+      async () => {
+        this.items = this.fetchItems();
+      }
+    );
   },
 };
 </script>

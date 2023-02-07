@@ -13,8 +13,14 @@
 
 <script>
 import PageLayout from "../components/PageLayout.vue";
+import { getCategoryItems } from "../app/api";
 export default {
   components: { PageLayout },
+  data() {
+    return {
+      items: null,
+    };
+  },
   computed: {
     category() {
       const { categories } = this.$store.state;
@@ -24,6 +30,9 @@ export default {
         );
       return null;
     },
+  },
+  async created() {
+    if (this.category) this.items = await getCategoryItems(this.category._id);
   },
 };
 </script>

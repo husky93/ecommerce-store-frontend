@@ -3,6 +3,7 @@
     <div class="category" v-if="category">
       <h1>This is a {{ category.title }} category page</h1>
       <p>{{ category.description }}</p>
+      <ItemList :items="items" />
     </div>
     <div class="category error" v-if="!category">
       <h1>Error 404</h1>
@@ -13,9 +14,10 @@
 
 <script>
 import PageLayout from "../components/PageLayout.vue";
+import ItemList from "../components/category/ItemList.vue";
 import { getCategoryItems } from "../app/api";
 export default {
-  components: { PageLayout },
+  components: { PageLayout, ItemList },
   data() {
     return {
       items: null,
@@ -33,16 +35,23 @@ export default {
   },
   methods: {
     async fetchItems() {
-      if (this.category) return await getCategoryItems(this.category._id);
-      return null;
+      let data = null;
+      if (this.category) {
+        try {
+          data = await getCategoryItems(this.category._id);
+        } catch (error) {
+          data = null;
+        }
+      }
+      return data;
     },
   },
-  created() {
-    this.items = this.fetchItems();
+  async created() {
+    this.items = await this.fetchItems();
     this.$watch(
       () => this.$route.params,
       async () => {
-        this.items = this.fetchItems();
+        this.items = await this.fetchItems();
       }
     );
   },

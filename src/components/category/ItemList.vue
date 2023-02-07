@@ -1,5 +1,5 @@
 <template>
-  <ItemCard v-for="item in items" :key="item._id" />
+  <ItemCard v-for="item in items" :key="item._id" :item="item" />
 </template>
 
 <script>

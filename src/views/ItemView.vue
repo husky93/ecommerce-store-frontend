@@ -40,7 +40,10 @@ export default {
     },
   },
   methods: {
-    addToCart() {},
+    addToCart() {
+      this.$store.dispatch("addItemToCart", this.data);
+      console.log(this.$store.state.cart);
+    },
   },
 };
 </script>

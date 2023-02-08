@@ -16,12 +16,15 @@
 import PageLayout from "../components/PageLayout.vue";
 import ItemList from "../components/category/ItemList.vue";
 import { getCategoryItems } from "../app/api";
+import { useFetchData } from "../composition";
+
 export default {
   components: { PageLayout, ItemList },
-  data() {
-    return {
-      items: null,
-    };
+  setup() {
+    const { data: items } = useFetchData({
+      fetch: getCategoryItems,
+    });
+    return { items };
   },
   computed: {
     category() {
@@ -32,28 +35,6 @@ export default {
         );
       return null;
     },
-  },
-  methods: {
-    async fetchItems() {
-      let data = null;
-      if (this.category) {
-        try {
-          data = await getCategoryItems(this.category._id);
-        } catch (error) {
-          data = null;
-        }
-      }
-      return data;
-    },
-  },
-  async created() {
-    this.$watch(
-      () => this.$route.params,
-      async () => {
-        this.items = await this.fetchItems();
-      },
-      { immediate: true }
-    );
   },
 };
 </script>

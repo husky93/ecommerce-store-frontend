@@ -16,12 +16,12 @@
 import PageLayout from "../components/PageLayout.vue";
 import ItemList from "../components/category/ItemList.vue";
 import { getCategoryItems } from "../app/api";
-import { useFetchData } from "../composition";
+import { useWatchParams } from "../composition";
 
 export default {
   components: { PageLayout, ItemList },
   setup() {
-    const { data: items } = useFetchData({
+    const { data: items } = useWatchParams({
       fetch: getCategoryItems,
     });
     return { items };

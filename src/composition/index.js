@@ -1,7 +1,7 @@
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
-export const useFetchData = (props) => {
+export const useWatchParams = (props) => {
   const data = ref(null);
   const route = useRoute();
   watch(

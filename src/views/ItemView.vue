@@ -11,14 +11,10 @@
 import PageLayout from "../components/PageLayout.vue";
 import { getItemById } from "../app/api";
 import { useFetchData } from "../composition";
-import { useRoute } from "vue-router";
 
 export default {
   setup() {
-    const route = useRoute();
-    console.log(route.params.id);
     const { data } = useFetchData({
-      id: route.params.id,
       fetch: getItemById,
     });
     return { data };

@@ -6,15 +6,19 @@
       @click="redirectTo(signupLink)"
     />
     <CustomButton class="primary" text="Login" @click="redirectTo(loginLink)" />
+    <HeaderCart />
   </div>
   <div class="user_ui authenticated" v-if="isAuthenticated">
     <UserInfo />
+    <HeaderCart />
   </div>
 </template>
 
 <script>
 import CustomButton from "./CustomButton.vue";
 import UserInfo from "./UserInfo.vue";
+import HeaderCart from "./HeaderCart.vue";
+
 export default {
   data() {
     return {
@@ -25,6 +29,7 @@ export default {
   components: {
     CustomButton,
     UserInfo,
+    HeaderCart,
   },
   methods: {
     redirectTo(link) {

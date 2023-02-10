@@ -13,11 +13,14 @@
       <span>Total:</span>
       <span>{{ totalPrice }}$</span>
     </div>
+    <CustomButton text="Checkout" @click="$router.push('/checkout')" />
   </aside>
 </template>
 
 <script>
+import CustomButton from "../CustomButton.vue";
 export default {
+  components: { CustomButton },
   computed: {
     cart() {
       return this.$store.state.cart;

@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { getCategories } from "../app/api";
+import { v4 as uuidv4 } from "uuid";
 
 export default createStore({
   state: {
@@ -18,10 +19,10 @@ export default createStore({
       state.categories = payload;
     },
     addToCart(state, payload) {
-      state.cart = [...state.cart, payload];
+      state.cart = [...state.cart, { ...payload, cart_id: uuidv4() }];
     },
     removeFromCart(state, payload) {
-      state.cart = state.cart.filter((item) => item._id !== payload);
+      state.cart = state.cart.filter((item) => item.cart_id !== payload);
     },
   },
   actions: {

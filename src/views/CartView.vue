@@ -5,7 +5,7 @@
       <section class="cart_display">
         <CartItem v-for="item in cart" :item="item" :key="item.cart_id" />
       </section>
-      <aside class="cart_ui"></aside>
+      <CartUi :cart="cart" />
     </div>
   </PageLayout>
 </template>
@@ -13,9 +13,10 @@
 <script>
 import PageLayout from "../components/PageLayout.vue";
 import CartItem from "../components/cart/CartItem.vue";
+import CartUi from "../components/cart/CartUi.vue";
 
 export default {
-  components: { PageLayout, CartItem },
+  components: { PageLayout, CartItem, CartUi },
   computed: {
     cart() {
       return this.$store.state.cart;

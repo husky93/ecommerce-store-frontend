@@ -3,7 +3,15 @@
     <h2>Payment</h2>
     <div class="cart_ui_group">
       <span>Products Value:</span>
-      <span>{{ totalPrice }}</span>
+      <span>{{ totalPrice }}$</span>
+    </div>
+    <div class="cart_ui_group">
+      <span>Delivery:</span>
+      <span>free</span>
+    </div>
+    <div class="cart_ui_group">
+      <span>Total:</span>
+      <span>{{ totalPrice }}$</span>
     </div>
   </aside>
 </template>

@@ -3,7 +3,7 @@
     <div class="cart">
       <h1>This is a cart page</h1>
       <section class="cart_display">
-        <CartItem v-for="item in cart" :item="item" :key="item._id" />
+        <CartItem v-for="item in cart" :item="item" :key="item.cart_id" />
       </section>
       <aside class="cart_ui"></aside>
     </div>

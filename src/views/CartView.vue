@@ -5,7 +5,7 @@
       <section class="cart_display">
         <CartItem v-for="item in cart" :item="item" :key="item.cart_id" />
       </section>
-      <CartUi :cart="cart" />
+      <CartUi />
     </div>
   </PageLayout>
 </template>
